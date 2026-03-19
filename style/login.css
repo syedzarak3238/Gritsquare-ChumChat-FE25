@@ -1,3 +1,18 @@
+
+/* NAVBAR */
+:root{
+
+    /* Fonts */
+    --font-one: "Inter", sans-serif;
+
+    /* Color */
+    --colorOne: #00A86B;
+    --colorTwo: #000000;
+    --colorThree: #F2EAE0;
+}
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
