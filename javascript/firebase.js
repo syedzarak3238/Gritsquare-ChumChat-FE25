@@ -14,4 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);
-export const reference = ref(db, '/');
+
+export const usersRef = ref(db, "/users");
+export const messagesRef = ref(db, "/messages");
+export const repliesRef = ref(db, "/replies");

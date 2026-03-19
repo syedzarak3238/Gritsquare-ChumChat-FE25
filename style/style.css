@@ -50,88 +50,80 @@ nav {
 }
 
 .main {
-     display: flex; 
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  background-image: url(/img/chat.jpg);
+  
 }
 
-/* SIDENAV */
-.sidenav {
-    font-family: var(--font-one);
-    font-size: 1.5rem;
-    width: 10%;
-    background:linear-gradient(rgba(0, 128, 0, 0.4), rgba(0, 128, 0, 0.4)), url(/img/chat.jpg);
-    
-    padding: 20px;
-    height: 200vh;
-    display: flex; 
-    flex-direction: column;
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-
-.sidenav a{
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-}
-
-.sidenav a:hover {
-    color: gold;
-}
-
-/* Send Message */
 
 .send-chat-container {
-  width:  80%;
-  margin: 50px auto;
+  position: sticky;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.message-area {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 12px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-family: var(--font-one);
+  background: #f7f7f7;
+  transition: all 0.2s ease;
+}
+
+.message-area:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 168, 107, 0.2);
+}
+
+.chat-send-button {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #00A86B, #00c97f);
+  color: white;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 168, 107, 0.3);
+}
+
+.chat-send-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 168, 107, 0.4);
+}
+
+.chat-send-button:active {
+  transform: scale(0.95);
 }
 
 .send-message {
   display: flex;
   gap: 10px;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
-
-.message-area {
-  flex: 1;
-  resize: none;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid var(--colorThree);
-  outline: none;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-.message-area:focus {
-  border-color: var(--colorOne);
-  box-shadow: 0 0 5px rgba(10, 221, 6, 0.3);
-}
-
-.chat-send-button {
-  padding: 0 20px;
-  border: none;
-  border-radius: 12px;
-  background: var(--colorOne);
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.chat-send-button:hover {
-  background:  var(--colorOne);
-}
-
-
 
 
 /* CHATBOX */
 .chat-container {
-  width: 100%; 
-  background-image: url(/img/chat.jpg);
-  
-  /* background-color: rgba(0, 0, 0, 0.843); */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+ text-align: center;
+  padding: 20px;
 }
 
 .chat-box{

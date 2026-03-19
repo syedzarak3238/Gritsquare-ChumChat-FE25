@@ -1,0 +1,21 @@
+/* SIDENAV */
+.sidenav {
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+    width: 100px;
+    background:linear-gradient(rgba(0, 128, 0, 0.4), rgba(0, 128, 0, 0.4)), url(/img/chat.jpg);
+    padding: 20px;
+    height: 200vh;
+    display: flex; 
+    flex-direction: column;
+}
+
+.sidenav a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.sidenav a:hover {
+    color: gold;
+}

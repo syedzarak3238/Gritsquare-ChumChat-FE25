@@ -14,6 +14,7 @@
     <!-- Google fonts end -->
     <!-- CSS -->
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/sidenav.css">
     <!-- CSS ENDS -->
     <title>Chumchat</title>
     <script src="./javascript/main.js" type="module"></script>
@@ -33,31 +34,32 @@
             <a href="#services">MEMES</a>
         </div>
 
+         <div class="content">
 
+    <div class="send-chat-container">
+      <form class="send-message" id="form-post">
+        <textarea placeholder="Skriv ett meddelande..." class="message-area"></textarea>
+        <button type="submit" class="chat-send-button">Send</button>
+      </form>
+    </div>
+      
+      
+       
         <div class="chat-container">
-
-            <div class="send-chat-container">
-                <form class="send-message" id="form-post">
-                    <textarea id="message-area" placeholder="Skriv ett meddelande..." class="message-area"></textarea>
-                    <button type="submit" class="chat-send-button">Send</button>
-                </form>
-           
+        
             <div class="chat-box">
                 <button class="close-button">X</button>
                 <div class="header-picture">
                     <img src="img/kid.png" alt="profile picture" class="profile-picture">
                     <h2>Andi</h2>
                 </div>
-
                 <p class="comments-chat">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-
                 <div class="timestamp">
                     <p>Timestamp</p>
                 </div>
                 <textarea name="" id="" class="actions" placeholder="Reply..."></textarea>
             </div>
- </div>
-
+        </div>
 
     </main>
 
