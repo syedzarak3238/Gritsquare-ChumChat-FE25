@@ -4,38 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link rel="shortcut icon" href="img/icon/ChumChatLogotyp.ico" type="image/x-icon">
-    <title>Chumchat/register</title>
+    <title>Chumchat|Login</title>
   </head>
   <link rel="stylesheet" href="/style/login.css" />
   <link rel="stylesheet" href="/style/style.css" />
 
   <body>
     <nav>
-      <img src="img/ChumChatLogotyp.png" class="logo" alt="loga för Chumchat" />
+     <a href="../index.html"><img src="/img/ChumChatLogotyp.png" class="logo" alt="loga för Chumchat"></a> 
       <ul class="menu">
-        <li><a href="#">Register/Logga in</a></li>
+        <li><a href="#">Register/Log in</a></li>
       </ul>
     </nav>
 
     <div class="container">
       <div class="register-card">
         <div class="header">
-          <h1>Register</h1>
+          <h1>LOG IN</h1>
         </div>
 
         <form class="form-body">
           <div class="input-group">
-            <span class="icon">✉️</span>
-            <input type="email" placeholder="Email" />
+            <span class="icon">👤</span>
+            <input type="text" placeholder="USERNAME" class="inputDesign" required id="sigin-input"/>
           </div>
 
           <div class="input-group">
             <span class="icon">🔒</span>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="PASSWORD" class="inputDesign" required id="sigin-password" />
           </div>
 
-          <button type="submit" class="login-btn">Register me</button>
+          <button type="submit" class="login-btn" id="login-button">LOG IN</button>
         </form>
+        <a href="/html/register.html" class="accountalready">Don't have an account?</a>
       </div>
     </div>
      <footer class="footer">

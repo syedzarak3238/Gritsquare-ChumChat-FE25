@@ -4,16 +4,12 @@
 }
 
 :root{
-
-    /* Fonts */
     --font-one: "Inter", sans-serif;
-
-    /* Color */
     --colorOne: #00A86B;
     --colorTwo: #000000;
     --colorThree: #F2EAE0;
+    --colorFour: #FFFFFF;
 }
-
 /* NAVBAR */
 
 nav {
@@ -26,7 +22,7 @@ nav {
 }
 
 .logo {
-    width: 100px;
+    width: 110px;
 }
 
 .menu {
