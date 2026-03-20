@@ -40,7 +40,7 @@ export const RenderMessageBox = (sender, message, messageKey) => {
     ChatReply.innerHTML = 'Reply'
 
 
-    const comments = document.createElement('textarea')
+    const comments = document.createElement('input')
     comments.placeholder = 'Reply...'
     comments.classList = 'actions'
 
