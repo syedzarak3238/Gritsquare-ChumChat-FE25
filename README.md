@@ -1,10 +1,10 @@
-# 💬 ChumChat
+# ChumChat
 
 A simple real-time chat application where users can send messages to each other.
 
 ---
 
-## 🚀 Features
+## Features
 
 * User authentication (sign up, login, logout)
 * Real-time messaging
@@ -15,7 +15,7 @@ A simple real-time chat application where users can send messages to each other.
 
 ---
 
-## 🎨 Design & Color Palette
+## Design & Color Palette
 
 | Preview                                                         | Hex       | Usage                         |
 | --------------------------------------------------------------- | --------- | ----------------------------- |
@@ -29,7 +29,7 @@ A simple real-time chat application where users can send messages to each other.
 
 ---
 
-## 💡 Usage
+## Usage
 
 1. Open the app in your browser
 2. Create an account or log in
@@ -39,13 +39,13 @@ A simple real-time chat application where users can send messages to each other.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * Frontend: ( HTML / CSS / JavaScript)
 * Backend: (JavaScript)
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! To keep the project organized, please follow these steps:
 
@@ -72,7 +72,7 @@ We welcome contributions! To keep the project organized, please follow these ste
    * What functionality was added
    * Any notes or instructions if needed
 7. **Do not just comment in the PR** — all code changes must be included in the Pull Request.
-8. **After approval:** If your Pull Request is approved and merged, your name will be added under the **Contributors** list below. 🎉
+8. **After approval:** If your Pull Request is approved and merged, your name will be added under the **Contributors** list below. 
 
 ### Current Contributors
 
@@ -84,7 +84,7 @@ We welcome contributions! To keep the project organized, please follow these ste
 
 ---
 
-## 📄 License
+## License
 
 MIT License
 
