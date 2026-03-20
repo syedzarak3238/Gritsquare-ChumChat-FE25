@@ -16,6 +16,13 @@
     padding: 10px;
 }
 
+.dark-modeA a{
+     color: black;
+}
 .sidenav a:hover {
     color: gold;
+}
+
+.dark-modenav {
+      background:linear-gradient(rgba(0, 128, 0, 0.4), rgba(0, 128, 0, 0.4)), url(/img/chatDark.jpg);
 }

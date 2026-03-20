@@ -32,11 +32,6 @@ nav {
     
 }
 
-.dark-mode {
-  background-color: black;
-  color: red;
-}
-
 .menu a {
     text-decoration: none;
     color: var(--colorFour);
@@ -55,7 +50,10 @@ nav {
   display: flex;
   flex-direction: row;
   background-image: url(/img/chat.jpg);
-  
+}
+
+.dark-mode {
+     background-image: url(/img/chatDark.jpg);
 }
 
 .content {
