@@ -1,33 +1,33 @@
-import { usersRef, db } from "../firebase.js";
-import { push, set, get, update } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+import { usersRef } from "../firebase.js";
+import { push, set } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
 import { setCurrentUser } from "./auth.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
-const formBody = document.querySelector(".form-body")
+const formBody = document.querySelector(".form-body");
+const auth = getAuth();
 
-formBody.addEventListener("submit", (e) => {
+formBody.addEventListener("submit", async(e) => {
     e.preventDefault();
 
-    const formData = new FormData(formBody)
+    const formData = new FormData(formBody);
 
-    const username = formData.get("username");
+    const email = formData.get("email");
     const password = formData.get("password");
     const pfpurl = formData.get("pfp-url");
 
-    console.log(formData.get("username"))
+    console.log(email);
 
-    console.log("Hello")
-    registerUser(username, password, pfpurl)
-})
+    const userId = await createUserWithEmailAndPassword(auth, email, password)
 
-const registerUser = (username, password, pfpUrl) => {
+    registerUser(userId.user.uid, pfpurl)
+});
+
+const registerUser = (userId, pfpUrl) => {
     const newUser = push(usersRef);
 
     const userData = {
-        user_id: newUser.key,
-        username: username,
-        password: password,
+        user_id: userId,
         role: "visitor",
-        isLoggedIn: true,
         img: pfpUrl,
     }
 
