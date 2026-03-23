@@ -24,6 +24,15 @@ A simple real-time chat application where users can send messages to each other.
 | ![#FFFFFF](https://img.shields.io/badge/White-FFFFFF?style=for-the-badge) | `#FFFFFF` |           
 
 
+# Typography Scale
+
+| Level | Size (px / rem) | Weight  | Example Text           |
+|-------|-----------------|---------|-----------------------|
+| 1     | 48–60 px / 1.5→2.5 rem | Regular | TYPOGRAPHY SCALE |
+| 2     | 24–35 px / 1.5→2 rem   | Regular | Typography Scale  |
+| 3     | 18–24 px / 0.5→1.5 rem | Bold    | **TYPOGRAPHY SCALE** |
+| 4     | 12–15 px / 0.5→1 rem   | Bold    | **TYPOGRAPHY SCALE** |
+
 ---
 
 ---
@@ -76,8 +85,10 @@ We welcome contributions! To keep the project organized, please follow these ste
 ### Current Contributors
 
 * [Andi](https://github.com/andi49) (PROJECT LEAD) 🚩
-* [Eddie](https://github.com/eddiewn)
-* [Jack](https://github.com/jackgustafsson)
+* [Eddie](https://github.com/eddiewn) (BACKEND/FRONTEND)
+* [Jack](https://github.com/jackgustafsson) (BACKEND/FRONTEND)
+* [Ali](https://github.com/Hammadi15) (UX/FRONTEND)
+
 
 
 
