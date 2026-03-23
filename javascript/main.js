@@ -24,6 +24,7 @@ onValue(reference, snapshot => {
 
     const messages = data.messages;
     const users = data.users;
+    const replies = data.replies;
 
-    RenderMessages(users, messages)
+    RenderMessages(users, messages, replies)
 })
