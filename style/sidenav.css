@@ -1,28 +1,54 @@
+:root{
+    --font-one: "Inter", sans-serif;
+    --colorOne: #00A86B;
+    --colorTwo: #000000;
+    --colorThree: #F2EAE0;
+    --colorFour: #FFFFFF;
+}
 /* SIDENAV */
 .sidenav {
     font-family: var(--font-one);
     font-size: 1.5rem;
     width: 100px;
-    background:linear-gradient(rgba(0, 128, 0, 0.4), rgba(0, 128, 0, 0.4)), url(/img/chat.jpg);
+   background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url(/img/chat.jpg);
     padding: 20px;
     height: 200vh;
     display: flex; 
     flex-direction: column;
 }
 
-.sidenav a{
+.sidenav a {
     text-decoration: none;
-    color: black;
+    color: var(--colorFour);
     padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
 }
 
-.dark-modeA a{
-     color: black;
-}
 .sidenav a:hover {
-    color: gold;
+    background-color: #4CAF50;
+    color: black;
 }
 
-.dark-modenav {
-      background:linear-gradient(rgba(0, 128, 0, 0.4), rgba(0, 128, 0, 0.4)), url(/img/chatDark.jpg);
+/* DARK MODE */
+.dark-mode .sidenav {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(/img/chatDark.jpg);
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Länkar */
+.dark-mode .sidenav a {
+    color: #e0e0e0; /* ljus grå istället för vit */
+}
+
+/* Hover */
+.dark-mode .sidenav a:hover {
+    background-color: #2e7d32;
+    color: white;
 }
