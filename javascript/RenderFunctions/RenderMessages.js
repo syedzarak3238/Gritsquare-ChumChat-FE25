@@ -1,12 +1,9 @@
 import {RenderMessageBox} from "./RenderMessageBox.js";
 import {auth} from "../firebase.js";
 
-
-
 export const RenderMessages = async (usersObject, messagesObject, replyObject) => {
 
-
-    const checkForReply = (messageId) => {
+    const checkForReply = (messageId, nestAmount) => {
         console.log("checking for reply")
         for (const replyKey in replyObject) {
             if (!Object.hasOwn(replyObject, replyKey)) continue;
@@ -21,13 +18,16 @@ export const RenderMessages = async (usersObject, messagesObject, replyObject) =
                     (u) => u.user_id === reply.user_id,
                 );
 
+                const nextNest = nestAmount + 1;
+
+
                 if (replySender) {
-                    RenderMessageBox(replySender, reply, reply.message_id);
+                    RenderMessageBox(replySender, reply, reply.message_id, nextNest);
                 } else {
-                    RenderMessageBox({ username: "Unknown", img: "" }, reply, reply.message_id);
+                    RenderMessageBox({ username: "Unknown", img: "" }, reply, reply.message_id, nextNest);
                 }
 
-                checkForReply(reply.message_id);
+                checkForReply(reply.message_id, nestAmount + 1);
             }
             // console.log(messageId)
         }
@@ -57,11 +57,11 @@ export const RenderMessages = async (usersObject, messagesObject, replyObject) =
 
         if (messageSender) {
             console.log(`Render-message: ${messageKey} från ${messageSender.username}`);
-            RenderMessageBox(messageSender, messageElement, messageKey);
+            RenderMessageBox(messageSender, messageElement, messageKey, 0);
         } else {
-            RenderMessageBox({ username: "Unknown", img: "" }, messageElement, messageKey);
+            RenderMessageBox({ username: "Unknown", img: "" }, messageElement, messageKey, nestAmount);
         }
 
-        checkForReply(messageElement.message_id);
+        checkForReply(messageElement.message_id, 0);
     }
 };

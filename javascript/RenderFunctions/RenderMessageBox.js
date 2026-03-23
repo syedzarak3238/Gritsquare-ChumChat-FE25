@@ -3,13 +3,15 @@ import {auth} from "../firebase.js";
 import { sendReply } from "../MessageFunctions/sendReply.js";
 import { censorBadWords } from "../function/censor.js";
 
-export const RenderMessageBox = async (sender, message, messageKey) => {
+export const RenderMessageBox = async (sender, message, messageKey, nestAmount = 0) => {
     const user = auth.currentUser;
 
     const ChatContainer = document.querySelector(".chat-container");
 
     const ChatBox = document.createElement("div");
     ChatBox.className = "chat-box";
+    ChatBox.classList.add(nestAmount);
+
 
     const ChatBoxSender = document.createElement("h2");
     ChatBoxSender.textContent = sender.username;
