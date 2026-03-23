@@ -274,6 +274,8 @@ nav {
     z-index: 100;
   }
 
+  
+
   .menu.active {
     display: flex;
   }
@@ -286,17 +288,7 @@ nav {
     margin: 10px 0;
     text-align: center;
   }
-  /* .menu img {
-    max-height: 30px;
-  } */
 
-/* 
-  .menu button {
-    border: 5px solid var(--colorOne);
-    max-height: 0px;
-    padding: 0px;
-    margin-bottom: 10px;
-  } */
   .menu a{
         text-align: center;
 

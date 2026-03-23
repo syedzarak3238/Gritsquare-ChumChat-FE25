@@ -14,8 +14,12 @@ export const RenderMessageBox = async (sender, message, messageKey, nestAmount =
 
     console.log(nestAmount)
 
+    if (window.innerWidth > 768) {
     ChatBox.style.marginLeft = `${nestAmount * 50}px`;
-
+} else {
+    // För mobil, ingen margin
+    ChatBox.style.marginLeft = `0px`;
+}
 
     const ChatBoxSender = document.createElement("h2");
     ChatBoxSender.textContent = sender.username;
