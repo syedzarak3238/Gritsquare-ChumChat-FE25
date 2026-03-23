@@ -1,5 +1,7 @@
 import {deleteMessage} from "../MessageFunctions/deleteMessage.js";
 import {auth} from "../firebase.js";
+import { sendReply } from "../MessageFunctions/sendReply.js";
+import { censorBadWords } from "../function/censor.js";
 
 export const RenderMessageBox = async (sender, message, messageKey) => {
     const user = auth.currentUser;
@@ -24,7 +26,7 @@ export const RenderMessageBox = async (sender, message, messageKey) => {
 
     ChatBox.append(UserInfo);
 
-    console.log(message.user_id);
+    // console.log(message.user_id);
 
     if (user) {
         if (user.uid === message.user_id) {
@@ -43,7 +45,7 @@ export const RenderMessageBox = async (sender, message, messageKey) => {
 
     const ChatBoxMessage = document.createElement("p");
     // console.log(message)
-    ChatBoxMessage.textContent = message.message;
+    ChatBoxMessage.textContent = censorBadWords(message.message);
     ChatBoxMessage.className = "comments-chat";
 
     const TimeStamp = document.createElement("p");
@@ -60,13 +62,32 @@ export const RenderMessageBox = async (sender, message, messageKey) => {
         },
     );
 
+    const replyForm = document.createElement("form");
+    replyForm.className = "reply-form"
     const ChatReply = document.createElement("p");
     ChatReply.innerHTML = "Reply";
 
     const comments = document.createElement("input");
     comments.placeholder = "Reply...";
     comments.classList = "actions";
+    comments.name = "replyText"
 
-    ChatBox.append(ChatBoxMessage, TimeStamp, ChatReply, comments);
+    const submitReply = document.createElement("button")
+    submitReply.type = "submit"
+    submitReply.textContent = "Submit Reply"
+
+    replyForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+            const formData = new FormData(replyForm);
+
+            const replyText = formData.get("replyText");
+
+        // console.log(message)
+        sendReply(messageKey, replyText);
+    })
+
+    replyForm.append(ChatReply, comments, submitReply)
+
+    ChatBox.append(ChatBoxMessage, TimeStamp, replyForm);
     ChatContainer.appendChild(ChatBox);
 };

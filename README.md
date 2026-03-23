@@ -87,7 +87,7 @@ We welcome contributions! To keep the project organized, please follow these ste
 
 * [Andi](https://github.com/andi49) (PROJECT LEAD) 🚩
 * [Eddie](https://github.com/eddiewn) (BACKEND/FRONTEND)
-* [Jack](https://github.com/jackgustafsson) (BACKEND/FRONTEND)
+* [Jack](https://github.com/jackgustafsson) (BACKEND/FRONTEND) (Weather)
 * [Ali](https://github.com/Hammadi15) (UX/FRONTEND)
 
 

@@ -48,6 +48,20 @@ nav {
   font-size: 1rem;
   transition: 0.3s;
 }
+#darkmodeButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: block;
+    margin: 0 auto; /* centers it */
+    cursor: pointer;
+}
+
+#darkmodeButton img {
+    width: 30px;
+    height: auto;
+    display: block;
+}
 
 .menu a:hover {
   color: var(--colorTwo);
@@ -62,7 +76,9 @@ nav {
 
 .dark-mode {
   background-image: url(../img/chatDark.jpg);
+
 }
+
 
 .content {
   display: flex;
@@ -269,5 +285,20 @@ nav {
   .menu li {
     margin: 10px 0;
     text-align: center;
+  }
+  /* .menu img {
+    max-height: 30px;
+  } */
+
+/* 
+  .menu button {
+    border: 5px solid var(--colorOne);
+    max-height: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+  } */
+  .menu a{
+        text-align: center;
+
   }
 }

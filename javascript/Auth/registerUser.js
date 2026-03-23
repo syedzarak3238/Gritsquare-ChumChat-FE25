@@ -4,27 +4,34 @@ import { setCurrentUser } from "./auth.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 import { auth } from "../firebase.js";
 
-
 const formBody = document.querySelector(".form-body");
 
-formBody.addEventListener("submit", async(e) => {
+formBody.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const formData = new FormData(formBody);
-
     const email = formData.get("email");
     const password = formData.get("password");
     const username = formData.get("username");
     const pfpurl = formData.get("pfp-url");
 
-    console.log(email);
+    try {
+       
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const userId = userCredential.user.uid;
 
-    const userId = await createUserWithEmailAndPassword(auth, email, password)
+      
+        await registerUser(userId, username, pfpurl);
 
-    registerUser(await userId.user.uid, username, pfpurl)
+      
+        window.location.href = "../index.html";
+    } catch (error) {
+        console.error("Error creating user:", error);
+        alert(error.message); 
+    }
 });
 
-const registerUser = (userId, username, pfpUrl) => {
+const registerUser = async (userId, username, pfpUrl) => {
     const newUser = push(usersRef);
 
     const userData = {
@@ -32,8 +39,8 @@ const registerUser = (userId, username, pfpUrl) => {
         username: username,
         role: "visitor",
         img: pfpUrl,
-    }
+    };
 
-    set(newUser, userData);
-    setCurrentUser(newUser)
-}
+    await set(newUser, userData);
+    setCurrentUser(newUser); 
+};

@@ -14,7 +14,6 @@
     <!-- Google fonts end -->
     <!-- CSS -->
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/sidenav.css">
     <!-- CSS ENDS -->
     <title>Chumchat</title>
 
@@ -29,9 +28,11 @@
             <span class="bar"></span>
         </div>
 
-        <ul class="menu">
-            <button id="darkmodeButton">Toggle Dark Mode</button>
-            <a href="#about">ROM1</a>
+         <ul class="menu">
+             <button id="darkmodeButton">
+                <img src="img/svg/white.png">
+             </button>
+             <a href="#about">ROM1</a>
             <a href="#services">MEMES</a>
             <li id="user-area"></li>
         </ul>
@@ -41,15 +42,13 @@
     </nav>
 
     <main class="main" id="main">
-        <div class="sidenav" id="sidenav"></div>
+       
 
         <div class="content">
             <div class="send-chat-container">
                 <form class="send-message" id="form-post">
                     <input placeholder="Skriv ett meddelande..." type="text" name="message" class="message-area" />
-                    <button type="submit" class="chat-send-button">
-                        Send
-                    </button>
+                    <button type="submit" class="chat-send-button">Send</button>
                 </form>
             </div>
 
