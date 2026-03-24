@@ -3,32 +3,28 @@ import { auth } from "../firebase.js";
 
 const db = getDatabase();
 
-export const toggleLike = async (messageKey, isLiked) => {
+export const toggleLike = async (id, isLiked, type) => {
     const user = auth.currentUser;
-    if (!user) {
-        alert("Du behöver logga in först!")
-        return;
-    }
+    if (!user) return;
 
-    const likeRef = ref(db, `messages/${messageKey}/likes`);
-    const userLikeRef = ref(db, `users/${user.uid}/likedPosts/${messageKey}`);
-
-    await runTransaction(likeRef, (currentLikes) => {
-        if (isLiked) {
-                return Math.max(0, (currentLikes || 0) - 1);
-            } else {
-                return (currentLikes || 0) + 1;
-            }
-        });
+    const likeRef = ref(db, `${type}/${id}/likes`);
+    const userLikeRef = ref(db, `users/${user.uid}/likedPosts/${id}`);   
     
-try {
-    if (isLiked) {
-        await remove(userLikeRef);
-    } else {
-        await set(userLikeRef, true);
-    }
-    } catch (error) {
-        console.error("Det gick inte att likea", error);
-    }
+    try {
+        await runTransaction(likeRef, (currentLikes) => {
+            if (isLiked) {
+                    return Math.max(0, (currentLikes || 0) - 1);
+                } else {
+                    return (currentLikes || 0) + 1;
+                }
+            });
+        if (isLiked) {
+            await remove(userLikeRef);
+        } else {
+            await set(userLikeRef, true);
+        }
+        } catch (error) {
+            console.error("Det gick inte att likea", error);
+        }
 }
     

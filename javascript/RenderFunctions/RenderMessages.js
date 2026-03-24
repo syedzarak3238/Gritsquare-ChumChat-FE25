@@ -26,7 +26,7 @@ export const RenderMessages = async (usersObject, messagesObject, replyObject, c
                 const isFav = currentUser?.favorites?.[replyKey] || false;
 
                 if (replySender) {
-                    RenderMessageBox(replySender, reply, reply.message_id, nextNest, isLiked, isFav);
+                    RenderMessageBox(replySender, reply, reply.message_id, nextNest, isLiked, isFav, "replies");
                 } else {
                     RenderMessageBox({ username: "Unknown", img: "" }, reply, reply.message_id, nextNest, isLiked, isFav);
                 }
@@ -64,7 +64,7 @@ export const RenderMessages = async (usersObject, messagesObject, replyObject, c
 
         if (messageSender) {
             console.log(`Render-message: ${messageKey} från ${messageSender.username}`);
-            RenderMessageBox(messageSender, messageElement, messageKey, 0, isLiked, isFav);
+            RenderMessageBox(messageSender, messageElement, messageKey, 0, isLiked, isFav, "messages");
         } else {
             RenderMessageBox({ username: "Unknown", img: "" }, messageElement, messageKey, nestAmount, isLiked, isFav);
         }

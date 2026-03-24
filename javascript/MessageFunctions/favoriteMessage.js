@@ -3,7 +3,7 @@ import { auth } from "../firebase.js";
 
 const db = getDatabase();
 
-export const toggleFavorite = async (messageKey, isFavorited) => {
+export const toggleFavorite = async (messageKey, isFavorited, type) => {
     const user = auth.currentUser;
     if (!user) return;
 

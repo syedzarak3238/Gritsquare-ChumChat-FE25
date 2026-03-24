@@ -5,7 +5,7 @@ import { censorBadWords } from "../function/censor.js";
 import { toggleLike } from "../MessageFunctions/likeMessage.js";
 import { toggleFavorite } from "../MessageFunctions/favoriteMessage.js";
 
-export const RenderMessageBox = async (sender, message, messageKey, nestAmount = 0, isLiked, isFav) => {
+export const RenderMessageBox = async (sender, message, messageKey, nestAmount = 0, isLiked, isFav, type) => {
     const user = auth.currentUser;
 
     const ChatContainer = document.querySelector(".chat-container");
@@ -82,7 +82,9 @@ actionBar.className = 'action-bar';
 
 const likeBtn = document.createElement('button');
 likeBtn.className = `like-btn ${isLiked ? "active" : ""}`;
-likeBtn.innerHTML = `<svg class="icon heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+likeBtn.innerHTML = `<svg class="icon thumb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+        </svg>
         <span class="like-count">${message.likes || 0}</span>`;
 
 const favBtn = document.createElement('button');
@@ -97,7 +99,7 @@ likeBtn.addEventListener("click", () => {
         alert("Du behöver logga in för att gilla inlägg!");
         return;
     }
-    toggleLike(messageKey, isLiked);
+    toggleLike(messageKey, isLiked, type);
 });
 
 favBtn.addEventListener("click", () => {
@@ -105,7 +107,7 @@ favBtn.addEventListener("click", () => {
         alert("Du behöver logga in för att spara favoriter!");
         return;
     }
-    toggleFavorite(messageKey, isFav);
+    toggleFavorite(messageKey, isFav, type);
 });
 
 actionBar.append(likeBtn, favBtn);
