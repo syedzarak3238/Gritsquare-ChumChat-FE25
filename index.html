@@ -19,8 +19,39 @@
     <title>Chumchat</title>
 
 </head>
-
 <body>
+
+  <!-- 👇 Wrap ALL your website content -->
+  <div id="mainContent">
+    <!-- your whole app here -->
+  </div>
+
+  <!-- Terms Popup -->
+  <div id="mainContent">
+  <!-- your app -->
+</div>
+
+<div id="termsPopup" class="popup">
+  <div class="popup-content">
+    <h2>Terms & Conditions</h2>
+
+    <p>
+      • Be respectful<br>
+      • No harmful content<br>
+      • Messages are public
+    </p>
+
+    <div>
+      <input type="checkbox" id="agreeCheckbox">
+      <label>I agree</label>
+    </div>
+
+    <button id="acceptBtn" disabled>Accept</button>
+  </div>
+</div>
+
+  <script src="javascript/popup.js"></script>
+</body>
     <nav>
         <a href="index.html"><img src="img/ChumChatLogotyp.png" class="logo" alt="loga för Chumchat" /></a>
         <div class="hamburger" id="hamburger">
@@ -68,6 +99,12 @@
         <div class="chat-container"></div>
     </div>
 </main>
+
+
+
+
+
+
 
     <footer class="footer">
         <div id="weather-container">
