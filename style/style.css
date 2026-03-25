@@ -465,7 +465,24 @@ nav {
     height: auto;
     display: block;
 }
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
 
+/* Google Translate Element Centering */
+#google_translate_element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
+
+.goog-te-gadget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+
